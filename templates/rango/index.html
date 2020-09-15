@@ -6,10 +6,23 @@
     <title>Rango</title>
   </head>
   <body>
-    <h1>Rango says...</h1>
+    <h1>Rango says...!!!</h1>
     <div class="">
       hey there partner <br>
       <strong>{{ boldmessage }}</strong> <br>
+    </div>
+    <div class="">
+      {% if categories %}
+          <ul>
+            {% for category in categories %}
+                <li>
+                  <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a> 
+                </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+            <strong>Sorry, no categories to display</strong>
+        {% endif %}
     </div>
     <div class="">
       <a href="/rango/about">About</a>
